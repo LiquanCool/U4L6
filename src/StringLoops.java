@@ -73,7 +73,13 @@ public class StringLoops {
     }
     public String replaceCharacter(String searchChar, String origStr, String replaceChar)
     {
-        
+        int count = 0;
+        while(origStr.indexOf(searchChar) != -1)
+        {
+            count = origStr.indexOf(searchChar);
+            origStr = origStr.substring(0, count) + replaceChar + origStr.substring(count+1);
+        }
+        return origStr;
     }
 
 }
